@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Inheritance</title>
+	</head>
+	<body>
+		
+		<script src="Class.js"></script>
+		<script type="text/javascript">
+			var Animal = new Class;
+			
+			Animal.include({
+				breath: function() {
+					console.log('breath');
+				}
+			});
+			
+			// If a parent is passed to the Class constructor, 
+			// we make sure any subclasses share the same prototype
+			var Cat = new Class(Animal),
+				 tommy = new Cat,
+				 marie = new Cat;
+			
+			tommy.breath();
+			marie.breath();
+			
+			// Add instance properties/methods (e.g. are available on all instances)
+			Cat.include({
+				age: 0,
+				setAge: function(age) {
+					this.age = age;
+				}
+			});
+			
+			console.log(tommy.age, marie.age); // 0, 0
+			tommy.setAge(1);
+			marie.setAge(2);
+			console.log(tommy.age, marie.age); // 1, 2
+			
+			// Add static properties/methods (e.g. are only available on the instance they are specified)
+			Cat.extend({
+				sex: 'female'
+			});
+			
+			console.log(tommy.sex, marie.sex, Cat.sex); // undefined, undefined, 'female'
+		</script>
+		
+	</body>
+</html>

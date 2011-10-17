@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Controller</title>
+	</head>
+	<body>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script src="Controller.js"></script>
+		<script src="example-controller.js"></script>
+		
+		<style type="text/css" media="screen">
+			#view {
+				border: 5px dashed blue;
+				cursor: pointer;
+				margin: 20px;
+				padding: 20px;
+				width: 100px;
+				
+				-webkit-transition: border-color 0.2s linear;
+				-moz-transition: border-color 0.2s linear;
+				-o-transition: border-color 0.2s linear;
+				transition: border-color 0.2s linear;
+			}
+			
+			#view.over {
+				border-color: red;
+			}
+		</style>
+		
+		<div id="view">Mouse over me</div>
+		
+	</body>
+</html>
